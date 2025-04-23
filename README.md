@@ -50,7 +50,7 @@ This project is a frontend application for Garage Hero, The application uses mod
 1. Clone the repository:
 
    ```bash
-   git clone [<repository-url>](https://github.com/markosbahgat/Garage-Hero)
+   git clone https://github.com/markosbahgat/Garage-Hero
    cd garage-hero
    ```
 

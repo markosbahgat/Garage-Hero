@@ -4,10 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const isAuthenticated =
     request.cookies.get("authenticated")?.value === "true";
-  console.log(request.cookies.get("authenticated"));
-  const ip =
-    request.ip ?? request.headers.get("x-forwarded-for") ?? "Unknown IP";
-  console.log("User IP:", ip);
+
   const protectedPaths = ["/dashboard"];
   const unProtectedPaths = ["/login", "/signup", "/otp"];
   if (

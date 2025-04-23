@@ -10,9 +10,15 @@ import { useRouter } from "next/navigation";
 import { authState } from "@/slices/auth.slice";
 import Image from "next/image";
 
-export function EmailVerificationOTPForm() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const inputRefs = Array.from({ length: 6 }, () => inputRef);
+const EmailVerificationOTPForm = () => {
+  const inputRefs = [
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+  ];
   const dispatch = useAppDispatch();
   const router = useRouter();
   const { isLoading } = useAppSelector(authState);
@@ -69,7 +75,7 @@ export function EmailVerificationOTPForm() {
   const handleResendOtp = () => {
     dispatch(
       resendOtp({
-        email: (window && localStorage?.getItem("user_email")) ?? "",
+        email: localStorage.getItem("user_email") ?? "",
         user_type: "root",
       }),
     ).then((res) => {
@@ -88,6 +94,8 @@ export function EmailVerificationOTPForm() {
               className="flex items-center text-2xl font-semibold text-white"
             >
               <Image
+                width={64}
+                height={44}
                 alt=""
                 src="./gh_small_logo.svg"
                 className="mr-2 size-11"
@@ -118,6 +126,8 @@ export function EmailVerificationOTPForm() {
             <div className="mb-8 flex items-center justify-center space-x-4 lg:hidden">
               <a href="#" className="flex items-center text-2xl font-semibold">
                 <Image
+                  width={44}
+                  height={44}
                   alt=""
                   src="./gh_small_logo.svg"
                   className="mr-2 size-11"
@@ -130,7 +140,9 @@ export function EmailVerificationOTPForm() {
             <p className="text-gray-500 dark:text-gray-400">
               We emailed you a six-digit code to&nbsp;
               <span className="font-medium text-gray-900 dark:text-white">
-                {(window && localStorage?.getItem("user_email")) ?? ""}
+                {(typeof window !== "undefined" &&
+                  localStorage.getItem("user_email")) ??
+                  ""}
               </span>
               . Enter the code below to confirm your email address.
             </p>
@@ -205,4 +217,5 @@ export function EmailVerificationOTPForm() {
       </div>
     </section>
   );
-}
+};
+export default EmailVerificationOTPForm;

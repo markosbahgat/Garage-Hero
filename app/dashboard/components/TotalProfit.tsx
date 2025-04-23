@@ -1,6 +1,8 @@
 "use client";
 import useReactApexChart from "@/hooks/useReactApexChart";
-import ReactApexChart from "react-apexcharts";
+
+import dynamic from "next/dynamic";
+const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const TotalProfit = () => {
   const { purchaseSaleChartOptions, purchaseSaleChartSeries } =
@@ -61,7 +63,7 @@ const TotalProfit = () => {
             </li>
           </ul>
           <div id="purchaseSaleChart" className="relative  size-full">
-            <ReactApexChart
+            <ApexChart
               options={purchaseSaleChartOptions as any}
               series={purchaseSaleChartSeries}
               type="bar"

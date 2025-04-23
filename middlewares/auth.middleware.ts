@@ -52,10 +52,10 @@ export const logUserOut = createAsyncThunk<
     const response = await axios.post(`/user/logout`, props);
 
     if (response.status === 200) {
-      localStorage.clear();
+      typeof window !== "undefined" && localStorage.clear();
       Cookies.remove("authenticated");
       Cookies.remove("token");
-      location.reload();
+      typeof window !== "undefined" && location.reload();
     }
     return await response.data;
   } catch (error: any) {
@@ -73,7 +73,8 @@ export const verifyOTP = createAsyncThunk<
 
     if (response.status === 200) {
       console.log(response.data);
-      localStorage.setItem("token", response.data.access_token);
+      typeof window !== "undefined" &&
+        localStorage.setItem("token", response.data.access_token);
       Cookies.set("authenticated", "true", {
         expires: 7,
         path: "/",

@@ -18,10 +18,10 @@ import {
 } from "@/middlewares/dashboard.middleware";
 import { exportToCSV } from "@/utils/exportToCSV";
 import { toast } from "react-toastify";
-import IncomeVsExpense from "./IncomeVsExpensesChart";
-import MonthlyTarget from "./MonthlyTarget";
-import PayableAndReceivable from "./PayableAndReceivable";
-import TotalProfit from "./TotalProfit";
+import IncomeVsExpense from "@/app/dashboard/components/IncomeVsExpensesChart";
+import MonthlyTarget from "@/app/dashboard/components/MonthlyTarget";
+import PayableAndReceivable from "@/app/dashboard/components/PayableAndReceivable";
+import TotalProfit from "@/app/dashboard/components/TotalProfit";
 
 type Props = {};
 
@@ -75,6 +75,7 @@ const DashboardComponents = (props: Props) => {
         break;
     }
   };
+
   return (
     <div className="w-full pb-10">
       <div className="my-6 flex flex-col items-start justify-start gap-1">

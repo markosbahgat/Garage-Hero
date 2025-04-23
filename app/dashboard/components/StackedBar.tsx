@@ -3,7 +3,9 @@
 import useReactApexChart from "@/hooks/useReactApexChart";
 import { formatNumber } from "@/utils/formatNumbers";
 import React from "react";
-import Chart from "react-apexcharts";
+// components/Chart.tsx
+import dynamic from "next/dynamic";
+const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface Props {
   financials: {
@@ -108,7 +110,7 @@ const StackedBarChart: React.FC<Props> = ({ financials }) => {
         </div>
       </div>
       <div className="mt-[-50px]">
-        <Chart
+        <ApexChart
           options={stackedBarOptions}
           series={stackedBarSeries}
           type="bar"

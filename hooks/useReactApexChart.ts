@@ -1,11 +1,93 @@
 import { ApexOptions } from "apexcharts";
 
-export function toArabicNumbers(input: string | number): string {
-  const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-  return input.toString().replace(/\d/g, (d) => arabicDigits[parseInt(d)]);
-}
-
 const useReactApexChart = () => {
+  const incomeExpenseOptions: ApexOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      width: "100%",
+      height: 150,
+      toolbar: {
+        show: false,
+      },
+      // padding: {
+      //   left: 0,
+      //   right: 0,
+      //   top: 0,
+      //   bottom: 0,
+      // },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF"],
+    },
+
+    grid: {
+      show: false,
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 1,
+        inverseColors: false,
+        opacityFrom: 0.6, // Intense near the top of the fill
+        opacityTo: 0, // Fades to transparent at the bottom
+        stops: [0, 100],
+        colorStops: [
+          {
+            offset: 0,
+            color: "#487FFF", // Bright blue at the top
+            opacity: 0.6,
+          },
+          {
+            offset: 100,
+            color: "#FFFFFF", // Fade into white at the bottom
+            opacity: 0,
+          },
+        ],
+      },
+    },
+
+    markers: {
+      colors: ["#487FFF"], // Use two colors for the markers
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+
+    xaxis: {
+      labels: { show: false },
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+    },
+    yaxis: {
+      labels: { show: false },
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  const incomeExpenseSeries = [
+    {
+      name: "Sales", // or any label you want
+      data: [11, 15, 20, 17, 21, 24, 20, 18],
+    },
+  ];
   const stackedBarOptions: ApexOptions = {
     chart: {
       type: "bar",
@@ -276,98 +358,10 @@ const useReactApexChart = () => {
     },
   ];
 
-  const incomeExpenseOptions: ApexOptions = {
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "area",
-      width: "100%",
-      height: 150,
-      toolbar: {
-        show: false,
-      },
-      // padding: {
-      //   left: 0,
-      //   right: 0,
-      //   top: 0,
-      //   bottom: 0,
-      // },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-      width: 3,
-      colors: ["#487FFF"],
-    },
-
-    grid: {
-      show: false,
-    },
-    fill: {
-      type: "gradient",
-      gradient: {
-        shade: "light",
-        type: "vertical",
-        shadeIntensity: 1,
-        inverseColors: false,
-        opacityFrom: 0.6, // Intense near the top of the fill
-        opacityTo: 0, // Fades to transparent at the bottom
-        stops: [0, 100],
-        colorStops: [
-          {
-            offset: 0,
-            color: "#487FFF", // Bright blue at the top
-            opacity: 0.6,
-          },
-          {
-            offset: 100,
-            color: "#FFFFFF", // Fade into white at the bottom
-            opacity: 0,
-          },
-        ],
-      },
-    },
-
-    markers: {
-      colors: ["#487FFF"], // Use two colors for the markers
-      strokeWidth: 3,
-      size: 0,
-      hover: {
-        size: 10,
-      },
-    },
-
-    xaxis: {
-      labels: { show: false },
-      axisBorder: { show: false },
-      axisTicks: { show: false },
-    },
-    yaxis: {
-      labels: { show: false },
-      axisBorder: { show: false },
-      axisTicks: { show: false },
-    },
-    tooltip: {
-      x: {
-        format: "dd/MM/yy HH:mm",
-      },
-    },
-  };
-
-  const incomeExpenseSeries = [
-    {
-      name: "Sales", // or any label you want
-      data: [11, 15, 20, 17, 21, 24, 20, 18],
-    },
-  ];
-
   return {
-    incomeExpenseOptions,
     purchaseSaleChartSeries,
     incomeExpenseSeries,
+    incomeExpenseOptions,
     purchaseSaleChartOptions,
     userOverviewDonutChartSeriesTwo,
     userOverviewDonutChartOptionsTwo,

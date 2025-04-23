@@ -2,7 +2,11 @@
 
 import { useAppSelector } from "@/store";
 import useReactApexChart from "@/hooks/useReactApexChart";
-import ReactApexChart from "react-apexcharts";
+
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 import { dashboardState } from "@/slices/dashboard.slice";
 import { useState } from "react";
 import { Modal } from "@/components/Modal";

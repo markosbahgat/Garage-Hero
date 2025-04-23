@@ -36,17 +36,22 @@ const TopHeader = (props: Props) => {
     if (user?.user?.id) {
       dispatch(logUserOut({ id: user?.user?.id }));
     } else {
-      localStorage.clear();
+      typeof window !== "undefined" && localStorage.clear();
       Cookies.remove("authenticated");
       Cookies.remove("token");
-      location.reload();
+      typeof window !== "undefined" && location.reload();
     }
   };
   return (
     <nav className="fixed left-0 top-0 z-10 h-20 w-full border border-gray-200  bg-white dark:border-gray-700 dark:bg-gray-800">
       <div className="mx-auto flex flex-wrap items-center justify-between p-4">
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src="/gh_small_logo.svg" className="h-8" alt="Flowbite Logo" />
+          <Image
+            src="/gh_small_logo.svg"
+            width={62}
+            height={32}
+            alt="Flowbite Logo"
+          />
           <div className="flex items-center justify-center gap-3 self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
             <button onClick={() => dispatch(toggleSidebar())}>
               <svg
@@ -194,6 +199,8 @@ const TopHeader = (props: Props) => {
           <button onClick={handleLogout}>
             <Image
               alt=""
+              width={32}
+              height={32}
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               className="ml-8 size-8 rounded-full bg-gray-50"
             />

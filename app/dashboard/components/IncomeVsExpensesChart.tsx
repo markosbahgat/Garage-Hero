@@ -2,8 +2,11 @@
 
 import { formatNumber } from "@/utils/formatNumbers";
 import useReactApexChart from "@/hooks/useReactApexChart";
-import ReactApexChart from "react-apexcharts";
 
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 interface Props {
   title: string;
   finance: number | string;

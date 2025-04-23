@@ -11,7 +11,7 @@ type Props = {
 const Sidebar: React.FC<Props> = ({ children }) => {
   const { showSidebar } = useAppSelector(appState);
   return (
-    <div className="mt-20 flex h-full w-full items-start justify-start shadow-sm">
+    <div className="mt-20 flex size-full items-start justify-start shadow-sm">
       {showSidebar ? (
         <aside
           id="separator-sidebar"
@@ -27,7 +27,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
                 <button className="group flex w-full items-center rounded-lg bg-gray-100 p-2 text-gray-900 dark:text-white dark:hover:bg-gray-700">
                   <p className="flex w-full items-center justify-start">
                     <svg
-                      className="h-6 w-6 text-gray-800 dark:text-white"
+                      className="size-6 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -48,7 +48,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
                   </p>
 
                   <svg
-                    className="h-6 w-6 text-gray-800 dark:text-white"
+                    className="size-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -74,7 +74,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
                   className="group flex items-center rounded-lg p-2 text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
-                    className="h-6 w-6 text-gray-800 dark:text-white"
+                    className="size-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -98,7 +98,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
                   className="group flex items-center rounded-lg p-2 text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
-                    className="h-6 w-6 text-gray-800 dark:text-white"
+                    className="size-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

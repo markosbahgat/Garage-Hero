@@ -25,7 +25,7 @@ const IncomeVsExpense: React.FC<Props> = ({ title, finance, change }) => {
           <span className="flex items-center whitespace-nowrap rounded bg-green-200 px-1 text-sm text-green-800">
             {Number(change) > 0 ? (
               <svg
-                className="h-3 w-3 text-green-800 dark:text-white"
+                className="size-3 text-green-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -48,7 +48,7 @@ const IncomeVsExpense: React.FC<Props> = ({ title, finance, change }) => {
       </div>
 
       {finance && change ? (
-        <div className="mt-[-60px] flex h-full w-full items-end justify-center">
+        <div className="mt-[-60px] flex size-full items-end justify-center">
           <ReactApexChart
             options={incomeExpenseOptions as any}
             series={incomeExpenseSeries}

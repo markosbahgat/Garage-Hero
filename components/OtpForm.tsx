@@ -8,11 +8,11 @@ import { resendOtp, verifyOTP } from "@/middlewares/auth.middleware";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { authState } from "@/slices/auth.slice";
+import Image from "next/image";
 
 export function EmailVerificationOTPForm() {
-  const inputRefs = Array.from({ length: 6 }, () =>
-    useRef<HTMLInputElement>(null),
-  );
+  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRefs = Array.from({ length: 6 }, () => inputRef);
   const dispatch = useAppDispatch();
   const router = useRouter();
   const { isLoading } = useAppSelector(authState);
@@ -69,7 +69,7 @@ export function EmailVerificationOTPForm() {
   const handleResendOtp = () => {
     dispatch(
       resendOtp({
-        email: localStorage.getItem("user_email") ?? "",
+        email: (window && localStorage?.getItem("user_email")) ?? "",
         user_type: "root",
       }),
     ).then((res) => {
@@ -81,17 +81,21 @@ export function EmailVerificationOTPForm() {
   return (
     <section className="bg-white px-4 py-8 dark:bg-gray-900 lg:py-0">
       <div className="lg:flex">
-        <div className="bg-primary-600 hidden w-full max-w-md p-12 lg:block lg:h-screen">
+        <div className=" hidden w-full max-w-md p-12 lg:block lg:h-screen">
           <div className="mb-8 flex items-center space-x-4">
             <a
               href="#"
               className="flex items-center text-2xl font-semibold text-white"
             >
-              <img alt="" src="./gh_small_logo.svg" className="mr-2 size-11" />
+              <Image
+                alt=""
+                src="./gh_small_logo.svg"
+                className="mr-2 size-11"
+              />
             </a>
             <a
               href="/login"
-              className="text-primary-100 inline-flex items-center text-sm font-medium hover:text-white"
+              className=" inline-flex items-center text-sm font-medium hover:text-white"
             >
               <svg
                 className="mr-1 size-6"
@@ -113,7 +117,7 @@ export function EmailVerificationOTPForm() {
           <div className="w-full">
             <div className="mb-8 flex items-center justify-center space-x-4 lg:hidden">
               <a href="#" className="flex items-center text-2xl font-semibold">
-                <img
+                <Image
                   alt=""
                   src="./gh_small_logo.svg"
                   className="mr-2 size-11"
@@ -126,7 +130,7 @@ export function EmailVerificationOTPForm() {
             <p className="text-gray-500 dark:text-gray-400">
               We emailed you a six-digit code to&nbsp;
               <span className="font-medium text-gray-900 dark:text-white">
-                {localStorage.getItem("user_email") ?? ""}
+                {(window && localStorage?.getItem("user_email")) ?? ""}
               </span>
               . Enter the code below to confirm your email address.
             </p>
@@ -165,7 +169,7 @@ export function EmailVerificationOTPForm() {
                 Make sure to keep this window open while checking your inbox.
               </p>
               <p className="mb-4 flex items-center gap-1  rounded-lg text-sm text-gray-500 dark:bg-gray-800 dark:text-gray-400 ">
-                Didn't receive anything ?{" "}
+                Didn&apos;t receive anything ?{" "}
                 <button
                   onClick={handleResendOtp}
                   type="button"

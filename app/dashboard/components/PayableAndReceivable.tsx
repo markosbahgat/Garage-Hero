@@ -8,9 +8,9 @@ type Props = {};
 const PayableAndReceivable = (props: Props) => {
   const { barChartOptionsOne, barChartSeriesOne } = useReactApexChart();
   return (
-    <div className="h-full w-full rounded-2xl bg-white p-4 shadow">
-      <div className="card h-full">
-        <div className="card-body p-6">
+    <div className="size-full rounded-2xl bg-white p-4 shadow">
+      <div className=" h-full">
+        <div className=" p-6">
           <div className="flex flex-col  items-start justify-start gap-2">
             <h6 className=" text-lg font-bold uppercase text-[#828282]">
               Payables and Receivables{" "}
@@ -19,7 +19,7 @@ const PayableAndReceivable = (props: Props) => {
               for this month
             </h6>
           </div>
-          <div id="barChart" className="barChart">
+          <div>
             <ReactApexChart
               options={barChartOptionsOne as any}
               series={barChartSeriesOne}

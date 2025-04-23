@@ -25,7 +25,7 @@ const StackedBarChart: React.FC<Props> = ({ financials }) => {
         <div className="flex w-full flex-col items-start justify-start gap-1 p-5">
           <p className="flex items-center justify-center gap-1 text-[14px] text-[#6B7280]">
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -53,7 +53,7 @@ const StackedBarChart: React.FC<Props> = ({ financials }) => {
         <div className="flex w-full flex-col items-start justify-start gap-1 p-5">
           <p className="flex items-center justify-center gap-1 text-[14px] text-[#6B7280]">
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -81,7 +81,7 @@ const StackedBarChart: React.FC<Props> = ({ financials }) => {
         <div className="flex w-full flex-col items-start justify-start gap-1 p-5">
           <p className="flex items-center justify-center gap-1 text-[14px] text-[#6B7280]">
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"

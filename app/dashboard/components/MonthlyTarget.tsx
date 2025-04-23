@@ -28,7 +28,7 @@ const MonthlyTarget = () => {
             </h6>
             <svg
               onClick={() => handleModal(true)}
-              className="h-6 w-6 cursor-pointer text-[#6B7280] dark:text-white"
+              className="size-6 cursor-pointer text-[#6B7280] dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -46,10 +46,7 @@ const MonthlyTarget = () => {
         </div>
         <div className="p-6">
           <div className="relative mt-6">
-            <div
-              id="statisticsDonutChart"
-              className="flex-grow-1 apexcharts-tooltip-z-none title-style circle-none"
-            >
+            <div className="   ">
               <ReactApexChart
                 options={userOverviewDonutChartOptionsTwo as any}
                 series={userOverviewDonutChartSeriesTwo}
@@ -57,18 +54,18 @@ const MonthlyTarget = () => {
                 height={200}
               />
             </div>
-            <div className=" absolute left-[50%] top-[50%] translate-x-[-50%]  translate-y-[-50%] text-center">
+            <div className=" absolute left-1/2 top-1/2 -translate-x-1/2  -translate-y-1/2 text-center">
               <span className="text-[20px] font-bold text-[#030229]">80%</span>
               <h6 className="text-[12px] text-gray-600">Reached</h6>
             </div>
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-5">
             <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-[#1A4C84]" />
+              <span className="size-3 rounded-full bg-[#1A4C84]" />
               <span className="text-sm text-gray-500">Target reached</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-[#1AA5AE]" />
+              <span className="size-3 rounded-full bg-[#1AA5AE]" />
               <span className="text-sm text-gray-500">Days to go</span>
             </div>
           </div>

@@ -89,7 +89,7 @@ const DashboardComponents = (props: Props) => {
           stats={dashboardAccountant?.stats}
           change={dashboardAccountant?.change}
         />
-        <div className="flex w-full   items-start justify-start  gap-3 overflow-auto border-b border-t bg-white py-5">
+        <div className="flex w-full   items-start justify-start  gap-3 overflow-auto border-y bg-white py-5">
           <IncomeVsExpense
             title="Revenue"
             finance={dashboardAccountant?.financials?.revenue as number}
@@ -111,14 +111,14 @@ const DashboardComponents = (props: Props) => {
         </div>
         <Button color="light">View Financial reports </Button>
       </div>
-      <div className="my-10 flex h-full w-full flex-col items-start justify-start gap-3 xl:flex-row">
+      <div className="my-10 flex size-full flex-col items-start justify-start gap-3 xl:flex-row">
         <TotalProfit />
         <div className="flex w-full flex-col items-start justify-start gap-3 lg:flex-row 2xl:w-2/5 2xl:flex-col">
           <MonthlyTarget />
           <PayableAndReceivable />
         </div>
       </div>
-      <div className=" flex h-full w-full flex-col items-start justify-start gap-5">
+      <div className=" flex size-full flex-col items-start justify-start gap-5">
         <Table
           headers={[
             "ID",

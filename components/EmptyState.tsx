@@ -4,10 +4,10 @@ type Props = {};
 
 const EmptyState = (props: Props) => {
   return (
-    <div className="my-10 flex h-full w-full flex-col items-center justify-center gap-3 p-10">
-      <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700">
+    <div className="my-10 flex size-full flex-col items-center justify-center gap-3 p-10">
+      <div className="flex size-[100px] items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700">
         <svg
-          className="h-[50px] w-[50px] text-[#98A2B3] dark:text-white"
+          className="size-[50px] text-[#98A2B3] dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"

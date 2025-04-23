@@ -70,7 +70,7 @@ const Stats: React.FC<Props> = ({ stats, change }) => {
               {item.value}{" "}
               <span className="flex items-center whitespace-nowrap rounded bg-green-200 px-1 text-sm text-green-800">
                 <svg
-                  className="h-4 w-4 text-green-800 dark:text-white"
+                  className="size-4 text-green-800 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

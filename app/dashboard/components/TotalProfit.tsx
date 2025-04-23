@@ -7,7 +7,7 @@ const TotalProfit = () => {
     useReactApexChart();
 
   return (
-    <div className="h-full w-full xl:w-1/2">
+    <div className="size-full xl:w-1/2">
       <div className="flex h-full flex-col rounded-2xl bg-white shadow">
         <div className="flex items-start justify-between  border-b px-6 pb-2 pt-6">
           <div className="flex flex-col items-start justify-between">
@@ -18,7 +18,7 @@ const TotalProfit = () => {
           </div>
           <span className="flex items-center whitespace-nowrap rounded bg-[#DEF7EC] px-3 py-0.5 text-[12px] text-[#03543F]">
             <svg
-              className="h-4 w-4 text-green-800 dark:text-white"
+              className="size-4 text-green-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -37,7 +37,7 @@ const TotalProfit = () => {
             Profit rate 23,4%
           </span>
         </div>
-        <div className="flex h-full flex-grow flex-col gap-4 p-6">
+        <div className="flex h-full grow flex-col gap-4 p-6">
           <ul className="flex  items-center justify-center gap-3">
             <li className="flex w-1/2 items-center gap-2">
               <div className="flex flex-col items-start justify-between">
@@ -60,7 +60,7 @@ const TotalProfit = () => {
               </div>
             </li>
           </ul>
-          <div id="purchaseSaleChart" className="relative  h-full w-full">
+          <div id="purchaseSaleChart" className="relative  size-full">
             <ReactApexChart
               options={purchaseSaleChartOptions as any}
               series={purchaseSaleChartSeries}
@@ -72,7 +72,7 @@ const TotalProfit = () => {
             <p className="flex items-center justify-center gap-1">
               Last 6 months{" "}
               <svg
-                className="h-6 w-6 text-gray-800 dark:text-white"
+                className="size-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -92,7 +92,7 @@ const TotalProfit = () => {
             <a className="flex items-center gap-1 text-[14px] uppercase text-[#1A56DB]">
               Revenue Report{" "}
               <svg
-                className="h-6 w-6 text-[#1A56DB] dark:text-white"
+                className="size-6 text-[#1A56DB] dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

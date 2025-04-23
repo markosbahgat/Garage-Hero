@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store";
 import { jwtDecode } from "jwt-decode";
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
+import Image from "next/image";
 type Props = {};
 
 const TopHeader = (props: Props) => {
@@ -45,11 +46,11 @@ const TopHeader = (props: Props) => {
     <nav className="fixed left-0 top-0 z-10 h-20 w-full border border-gray-200  bg-white dark:border-gray-700 dark:bg-gray-800">
       <div className="mx-auto flex flex-wrap items-center justify-between p-4">
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/gh_small_logo.svg" className="h-8" alt="Flowbite Logo" />
+          <Image src="/gh_small_logo.svg" className="h-8" alt="Flowbite Logo" />
           <div className="flex items-center justify-center gap-3 self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
             <button onClick={() => dispatch(toggleSidebar())}>
               <svg
-                className="h-6 w-6 text-gray-800 dark:text-white"
+                className="size-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -71,9 +72,9 @@ const TopHeader = (props: Props) => {
                 Search
               </label>
               <div className="relative mt-1">
-                <div className="rtl:inset-r-0 pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                <div className=" pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <svg
-                    className="h-4 w-4 text-gray-500 dark:text-gray-400"
+                    className="size-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -91,7 +92,7 @@ const TopHeader = (props: Props) => {
                 <input
                   type="text"
                   id="table-search"
-                  className="block w-80 rounded-lg border border-gray-300 bg-gray-50 ps-10 pt-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  className="block w-80 rounded-lg border border-gray-300 bg-gray-50 ps-10 pt-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   placeholder="Search"
                 />
               </div>
@@ -106,7 +107,7 @@ const TopHeader = (props: Props) => {
             aria-expanded="false"
           >
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -128,7 +129,7 @@ const TopHeader = (props: Props) => {
             aria-expanded="false"
           >
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -150,7 +151,7 @@ const TopHeader = (props: Props) => {
             aria-expanded="false"
           >
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -172,7 +173,7 @@ const TopHeader = (props: Props) => {
             aria-expanded="false"
           >
             <svg
-              className="h-6 w-6 text-gray-800 dark:text-white"
+              className="size-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -191,7 +192,7 @@ const TopHeader = (props: Props) => {
           </button>
 
           <button onClick={handleLogout}>
-            <img
+            <Image
               alt=""
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               className="ml-8 size-8 rounded-full bg-gray-50"

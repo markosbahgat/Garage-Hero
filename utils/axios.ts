@@ -11,9 +11,11 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers.token = token;
+    if (window && localStorage) {
+      const token = localStorage.getItem("token");
+      if (token) {
+        config.headers.token = token;
+      }
     }
     config.headers["Accept-Language"] = "en";
     config.headers["api_key"] = process.env.NEXT_PUBLIC_BACKEND_API_V1_KEY;

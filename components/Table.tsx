@@ -48,7 +48,7 @@ const Table: React.FC<Props> = ({
           <Button color="light" onClick={() => handleRefresh(label)}>
             <div className="flex items-center justify-center gap-1">
               <svg
-                className="h-4 w-4 text-gray-800 dark:text-white"
+                className="size-4 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -70,7 +70,7 @@ const Table: React.FC<Props> = ({
           <Button color="light" onClick={() => handleExport(label)}>
             <div className="flex items-center justify-center gap-1">
               <svg
-                className="h-4 w-4 text-gray-800 dark:text-white"
+                className="size-4 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -95,11 +95,11 @@ const Table: React.FC<Props> = ({
           "relative overflow-x-auto",
         )}
       >
-        <div className="flex-column  mb-4 flex flex-wrap items-center justify-start gap-5 space-y-4 bg-white py-4 dark:bg-gray-900 md:flex-row md:space-y-0">
-          <div className="relative flex  w-[500px] flex-nowrap whitespace-nowrap rounded-lg border border-gray-300 bg-gray-50 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500">
-            <div className="rtl:inset-r-0 pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+        <div className="  mb-4 flex flex-wrap items-center justify-start gap-5 space-y-4 bg-white py-4 dark:bg-gray-900 md:flex-row md:space-y-0">
+          <div className="relative flex  w-[500px] flex-nowrap whitespace-nowrap rounded-lg border border-gray-300 bg-gray-50 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500">
+            <div className=" pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
               <svg
-                className="h-4 w-4 text-gray-500 dark:text-gray-400"
+                className="size-4 text-gray-500 dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -128,7 +128,7 @@ const Table: React.FC<Props> = ({
             <Button color="light">
               <div className="flex items-center justify-center gap-1">
                 <svg
-                  className="h-4 w-4 text-gray-800 dark:text-white"
+                  className="size-4 text-gray-800 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -154,7 +154,7 @@ const Table: React.FC<Props> = ({
                     <input
                       id="checkbox-all-search"
                       type="checkbox"
-                      className="h-4 w-4 rounded-sm border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                      className="size-4 rounded-sm border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                     />
                     <label htmlFor="checkbox-all-search" className="sr-only">
                       checkbox
@@ -179,7 +179,7 @@ const Table: React.FC<Props> = ({
                       <input
                         id="checkbox-table-search-2"
                         type="checkbox"
-                        className="h-4 w-4 rounded-sm border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                        className="size-4 rounded-sm border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                       />
                       <label
                         htmlFor="checkbox-table-search-2"
